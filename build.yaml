@@ -18,5 +18,5 @@
 #
 ---
 include:
-  - board: nice60
+  # - board: nice60
   - board: IKBC87
