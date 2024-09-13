@@ -76,7 +76,7 @@ RC(5,0)   RC(5,1)   RC(5,2)                      RC(5,3)                       R
     };
     behaviors {
         // Behavior can be invoked on peripherals, so name must be <= 8 characters.
-        OTA: OTAloader {
+        OTA: OTAload {
             compatible = "zmk,behavior-reset";
             type = <0xA8>;
             #binding-cells = <0>;
