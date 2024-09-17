@@ -14,6 +14,22 @@
 #define ADJ 3
 
 / {
+    macros {
+        navi_pre: navi_pre {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_tap>,
+                <&kp LEFT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "NAVI_PRE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
