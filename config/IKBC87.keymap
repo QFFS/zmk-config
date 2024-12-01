@@ -24,7 +24,7 @@
                 <&macro_tap>,
                 <&kp LEFT>,
                 <&macro_release>,
-                <&kp LEFT_ALT>;
+                <&kp LCTRL>;
 
             label = "WIN_NAVI_PRE";
         };
@@ -70,9 +70,41 @@
                 <&macro_tap>,
                 <&kp RIGHT>,
                 <&macro_release>,
-                <&kp LEFT_ALT>;
+                <&kp LCTRL>;
 
             label = "WIN_NAVI_NEXT";
+        };
+
+        VS_ZS: VS_ZS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "VS_ZS";
+        };
+
+        VS_UZS: VS_UZS {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp K>,
+                <&macro_tap>,
+                <&kp U>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "VS_UZS";
         };
     };
 
@@ -102,7 +134,7 @@
             bindings = <
 &bootloader  &OTA          &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
-&trans       &trans        &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
+&trans       &trans        &trans        &VS_ZS         &VS_UZS        &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
 &trans       &trans        &trans        &vs_navi_pre   &vs_navi_next  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE  &kp DEL  &trans
 &trans       &trans        &trans        &kp C_AL_CALC  &trans         &trans  &win_navi_pre   &win_navi_next  &trans        &trans           &trans         &trans   &trans
 &trans       &trans        &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans
