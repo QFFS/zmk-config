@@ -15,18 +15,18 @@
 
 / {
     macros {
-        navi_pre: navi_pre {
+        win_navi_pre: win_navi_pre {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&macro_press>,
-                <&kp LEFT_ALT>,
+                <&kp LCTRL>,
                 <&macro_tap>,
                 <&kp LEFT>,
                 <&macro_release>,
                 <&kp LEFT_ALT>;
 
-            label = "NAVI_PRE";
+            label = "WIN_NAVI_PRE";
         };
 
         vs_navi_pre: VS_PRE {
@@ -60,6 +60,20 @@
 
             label = "NAVI_NEXT";
         };
+
+        win_navi_next: win_navi_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp RIGHT>,
+                <&macro_release>,
+                <&kp LEFT_ALT>;
+
+            label = "WIN_NAVI_NEXT";
+        };
     };
 
     keymap {
@@ -88,21 +102,21 @@
             bindings = <
 &bootloader  &OTA          &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
-&trans       &trans        &trans        &navi_pre      &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
+&trans       &trans        &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
 &trans       &trans        &trans        &vs_navi_pre   &vs_navi_next  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE  &kp DEL  &trans
-&trans       &trans        &trans        &kp C_AL_CALC  &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans
+&trans       &trans        &trans        &kp C_AL_CALC  &trans         &trans  &win_navi_pre   &win_navi_next  &trans        &trans           &trans         &trans   &trans
 &trans       &trans        &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans
             >;
         };
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &vs_navi_pre  &vs_navi_next  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
