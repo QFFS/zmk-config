@@ -28,6 +28,38 @@
 
             label = "NAVI_PRE";
         };
+
+        vs_navi_pre: VS_PRE {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp MINUS>,
+                <&macro_release>,
+                <&kp LCTRL>;
+
+            label = "VS_PRE";
+        };
+
+        vs_navi_next: navi_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp MINUS>,
+                <&macro_release>,
+                <&kp LCTRL>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "NAVI_NEXT";
+        };
     };
 
     keymap {
@@ -60,6 +92,17 @@
 &trans       &trans        &trans        &trans         &trans        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE  &kp DEL  &trans
 &trans       &trans        &trans        &kp C_AL_CALC  &trans        &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans
 &trans       &trans        &trans        &trans         &trans        &trans  &trans          &trans          &trans        &trans           &trans
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &vs_navi_pre  &vs_navi_next  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans        &trans         &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
