@@ -106,6 +106,24 @@
 
             label = "VS_UZS";
         };
+
+        find_Ref: find_Ref {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LEFT_ALT>,
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp F>,
+                <&macro_release>,
+                <&kp LEFT_ALT>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
+
+            label = "FIND_REF";
+        };
     };
 
     combos {
