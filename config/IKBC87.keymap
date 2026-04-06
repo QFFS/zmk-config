@@ -162,7 +162,7 @@
 &bootloader  &OTA          &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans
 &bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3   &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
 &trans       &trans        &trans        &VS_ZS         &VS_UZS        &trans  &trans          &trans          &trans        &trans           &trans         &trans   &trans  &trans  &trans  &trans  &trans
-&trans       &trans        &trans        &vs_navi_pre   &vs_navi_next  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE  &kp DEL  &trans
+&trans       &trans        &find_Ref     &vs_navi_pre   &vs_navi_next  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp BACKSPACE  &kp DEL  &trans
 &trans       &trans        &trans        &kp C_AL_CALC  &trans         &trans  &win_navi_pre   &win_navi_next  &trans        &trans           &trans         &trans   &trans
 &trans       &trans        &trans        &trans         &trans         &trans  &trans          &trans          &trans        &trans           &trans
             >;
